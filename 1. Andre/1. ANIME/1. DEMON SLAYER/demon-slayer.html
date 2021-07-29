@@ -79,13 +79,31 @@
      </div>
     </center>
     <center>
-      <div class="password">
-        <p>Masukkan password untuk mendownload</p>
-        <span id="notifikasi">Password salah</span>
-        <input type="text" id="passwordInput" class="form-control" placeholder="Masukkan password" / style="width: 250px;">
+    <div class="container mt-5">
+      <p>Download Video Lengkap Di Bawah Ini</p>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Download Video</button>
+      <div class="modal" id="myModal">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Download Video</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="password">
+                      <p>Masukkan password untuk mendownload</p>
+                        <span id="notifikasi" class="alert alert-warning alert-dismissible fade show" role="alert">Password salah</span>
+                        <input type="text" id="passwordInput" class="form-control" placeholder="Masukkan password" / style="width: 250px;">
+                      </div>
+                    </div>
+                  <div class="modal-footer">
+                    <a href="##" type="button" class="btn btn-primary btn-kirim">Download</a>
+                  </div>
+              </div>
+          </div>
       </div>
-      <br>s
-      <a href="##" class="btn btn-primary btn-kirim">Download</a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     </center>
   </body>
 </html>
