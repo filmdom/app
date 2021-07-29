@@ -1,11 +1,11 @@
 // Your web app's Firebase configuration (ENTER YOUR FIREBASE CONFIGURATION DETAILS)
 var firebaseConfig = {
-    apiKey: "AIzaSyB9dnZhx2Xqs2zUTFBMhfKTax1miXtSuOA",
-    authDomain: "chat-app-ada72.firebaseapp.com",
-    projectId: "chat-app-ada72",
-    storageBucket: "chat-app-ada72.appspot.com",
-    messagingSenderId: "1038364694551",
-    appId: "1:1038364694551:web:44d029dd49a387e38e2452",
+    apiKey: "AIzaSyC2OwYTv-0pAHF9EceU8en6vwrNFxK0jO0",
+    authDomain: "login-filmdom.firebaseapp.com",
+    projectId: "login-filmdom",
+    storageBucket: "login-filmdom.appspot.com",
+    messagingSenderId: "721827050356",
+    appId: "1:721827050356:web:1b6bd73cdcbf14d100f221",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
