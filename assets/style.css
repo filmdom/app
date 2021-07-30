@@ -315,7 +315,7 @@ button{
   transition: background 0.1s linear, border-color 0.1s linear, color 0.1s linear;
 }
 .view-modal{
-  top: 22%;
+  top: 24%;
   color: white;
   font-size: 18px;
   padding: 10px 120px;
