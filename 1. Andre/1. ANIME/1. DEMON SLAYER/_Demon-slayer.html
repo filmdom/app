@@ -1,0 +1,160 @@
+<style>
+    video {
+    max-width: 100%;
+    height: auto;
+}
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+        gap: 10px;
+      }
+      a {
+        display: block;
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .password {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #notifikasi {
+        margin-top: 5px;
+        font-size: 0.9em;
+        letter-spacing: 0.3px;
+        display: none;
+        font-weight: bold;
+        color: red;
+      }
+      .modal-header {
+            background: #F7941E;
+            color: #fff;
+        }
+        
+        .required:after {
+            content: "*";
+            color: red;
+        }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Demon Slayer</title>
+  </head>
+  <body>
+    <center>
+    <video controls controlsList="nodownload">
+      <source src="Kimetsu No Yaiba_01.mp4" type="video/mp4" />
+    </video>
+    <h2>Kimetsu No Yaiba</h2>
+    
+    <div class="buttons">
+      <div class="btn">
+        <button type="submit" value="1" class="btn btn-primary">episode 1</button>
+        <button type="submit" value="2" class="btn btn-primary">episode 2</button>
+        <button type="submit" value="3" class="btn btn-primary">episode 3</button>
+      </div>
+      <div class="btn">
+        <button type="submit" value="4" class="btn btn-primary">episode 4</button>
+        <button type="submit" value="5" class="btn btn-primary">episode 5</button>
+        <button type="submit" value="6" class="btn btn-primary">episode 6</button>
+      </div>
+     </div>
+    </center>
+    <center>
+      <!--Download--
+    <div class="container mt-5">
+      <p>Download Video Lengkap Di Bawah Ini</p>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Download Video</button>
+      <div class="modal" id="myModal">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Download Video</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="password">
+                      <p>Masukkan password untuk mendownload</p>
+                        <span id="notifikasi" class="alert alert-warning alert-dismissible fade show" role="alert">Password salah</span>
+                        <input type="text" id="passwordInput" class="form-control" placeholder="Masukkan password" / style="width: 250px;">
+                      </div>
+                    </div>
+                  <div class="modal-footer">
+                    <a href="##" type="button" class="btn btn-primary btn-kirim">Download</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </center>
+    <!--Download-->
+  </body>
+</html>
+
+<script>
+    const video = document.querySelector("video");
+      let videoSourceTag = document.querySelector("video").children[0];
+      const btn = document.querySelectorAll("button");
+      const linksDownload = document.querySelector("a");
+
+      const passwordDownload = "nonkuyid";
+      const passwordInput = document.getElementById("passwordInput");
+
+      btn.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          let sourceVideo = `Kimetsu No Yaiba_0${e.target.value}.mp4`;
+          videoSourceTag.src = sourceVideo;
+          video.load();
+
+          linksDownload.addEventListener("click", (e) => {
+            const notifikasi = document.getElementById("notifikasi");
+            if (passwordInput.value === passwordDownload) {
+              linksDownload.setAttribute("href", sourceVideo);
+              linksDownload.setAttribute("download", `Kimetsu No Yaiba_0${e.target.value}.mp4`);
+              notifikasi.innerText = "Password benar";
+              notifikasi.style.color = "green";
+              notifikasi.style.display = "inherit";
+            } else {
+              notifikasi.style.color = "red";
+              notifikasi.style.display = "inherit";
+              linksDownload.setAttribute("href", "##");
+              linksDownload.removeAttribute("download");
+            }
+          });
+        });
+      });
+
+      linksDownload.addEventListener("click", (e) => {
+        if (passwordInput.value === passwordDownload) {
+          linksDownload.setAttribute("href", `Kimetsu No Yaiba_01.mp4`);
+          linksDownload.setAttribute("download", `Kimetsu No Yaiba_01.mp4`);
+          notifikasi.innerText = "Password benar";
+          notifikasi.style.color = "green";
+          notifikasi.style.display = "inherit";
+        } else {
+          notifikasi.style.color = "red";
+          notifikasi.style.display = "inherit";
+          linksDownload.setAttribute("href", "##");
+          linksDownload.removeAttribute("download");
+        }
+      });
+</script>
