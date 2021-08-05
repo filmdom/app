@@ -1,3 +1,18 @@
+<style>
+    .jumbotron {
+  padding-top: 6rem;
+  background-color: #e2edff;
+  }
+  
+  #projects {
+  background-color: #e2edff;
+  }
+  
+  section {
+  padding-top: 5rem;
+  }
+  </style>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -22,6 +37,22 @@
 	
 </head>
 <body>
+    <!--POPUP MAINTENANCE--
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
+  <a id="popuplink" href="#inline" style="display:none;"></a>
+  <div id="inline" style="display:none;text-align:center;">
+  <img src="https://thebeachfurniture.co.nz/newbeach-logo.png" alt="" id="logo">
+  <img src="https://i.ibb.co/FqXktfM/Poster.png" alt="" style="width: 260px;">
+  <h3>Syarat" Join Clan</h3>
+  <p>Note : Level 40++</p>
+  <!--close--
+  <p><a href="javascript:;" onclick="jQuery.fancybox.close();" style="background-color:#333;padding:5px 10px;color:#fff;border-radius:5px;text-decoration:none;">Close</a></p>
+  <!--close--
+  </div>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+<!--img------------------->
     <section class="main">
       <!--img------------------->
         <div class="main-img">
@@ -164,6 +195,23 @@
   window.__lc = window.__lc || {};
   window.__lc.license = 12996390;
   ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+  jQuery(document).ready(function () {
+  function openFancybox() {
+      setTimeout(function () {
+          jQuery('#popuplink').trigger('click');
+      }, 500);
+  };
+  var visited = jQuery.cookie('visited');
+  if (visited == 'no') {
+       // second page load, cookie active
+  } else {
+      openFancybox(); // first page load, launch fancybox
+  }
+  jQuery.cookie('visited', 'no', {
+      expires: 0 // the number of days cookie  will be effective
+  });
+  jQuery("#popuplink").fancybox({modal:true, maxWidth: 400, overlay : {closeClick : true}});
+});
 </script>
 <noscript><a href="https://www.livechatinc.com/chat-with/12996390/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
 <!-- End of LiveChat code -->
